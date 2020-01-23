@@ -1,7 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace NubankClient.NuHttp
+namespace NubankClient.Http
 {
     public interface IHttpClient
     {

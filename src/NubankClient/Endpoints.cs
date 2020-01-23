@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using NubankClient.Models.Urls;
-using NubankClient.NuHttp;
+using NubankClient.Http;
 
 namespace NubankClient
 {

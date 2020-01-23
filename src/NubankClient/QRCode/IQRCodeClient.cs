@@ -1,4 +1,4 @@
-namespace NubankClient.NuQRCode
+namespace NubankClient.QRCode
 {
     public interface IQRCodeClient
     {

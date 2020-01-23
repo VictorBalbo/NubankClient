@@ -1,7 +1,7 @@
 using System;
 using QRCoder;
 
-namespace NubankClient.NuQRCode
+namespace NubankClient.QRCode
 {
     public class QRCodeClient : IQRCodeClient
     {

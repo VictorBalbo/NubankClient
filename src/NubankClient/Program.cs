@@ -9,10 +9,10 @@ namespace NubankClient
         static async Task Main(string[] args)
         {
             var nubankClient = new NubankClient("USER_LOGIN", "USER_PASSWORD");
-            var sucessfulLogin = await nubankClient.LoginAsync();
-            if (!sucessfulLogin) {
+            var successfulLogin = await nubankClient.LoginAsync();
+            if (!successfulLogin) {
                 Console.WriteLine(nubankClient.GetQRCodeAsAscii());
-                sucessfulLogin = await nubankClient.LoginWithQrCodeAsync();
+                successfulLogin = await nubankClient.LoginWithQrCodeAsync();
             }
 
             var events = await nubankClient.GetEventsAsync();

@@ -4,8 +4,8 @@ using System.Security.Authentication;
 using System.Threading.Tasks;
 using NubankClient.Models;
 using NubankClient.Models.ApiResponses;
-using NubankClient.NuHttp;
-using NubankClient.NuQRCode;
+using NubankClient.Http;
+using NubankClient.QRCode;
 
 namespace NubankClient
 {

@@ -4,7 +4,7 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace NubankClient.NuHttp
+namespace NubankClient.Http
 {
     public class HttpClient : IHttpClient
     {
