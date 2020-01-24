@@ -556,3 +556,5 @@ $RECYCLE.BIN/
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 
 # End of https://www.gitignore.io/api/csharp,windows,dotnetcore,visualstudio,visualstudiocode
+
+examples/*

@@ -11,6 +11,7 @@ namespace NubankClient
 {
     public class NubankClient
     {
+        private const string StatementGraphQl = "{ \"query\": \"{ viewer { savingsAccount { feed { id __typename title detail postDate ... on TransferInEvent { amount originAccount { name }} ... on TransferOutEvent { amount destinationAccount { name }} ... on BarcodePaymentEvent { amount }}}}}\" }";
         /// <summary>
         /// User Login
         /// </summary>
@@ -99,6 +100,19 @@ namespace NubankClient
             }
             
             return response.Events;
+        }
+
+        /// <summary>
+        /// Get user savings from Nubank 
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<Saving>> GetSavingsAsync()
+        {
+            EnsureAuthenticated();
+
+            var response = await _httpClient.PostWithAuthorizationAsync<GetSavingsResponse>(_endpoints.GraphQl, StatementGraphQl, _authToken);
+
+            return response.Savings;
         }
 
         /// <summary>

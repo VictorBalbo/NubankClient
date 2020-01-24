@@ -44,7 +44,14 @@ namespace NubankClient.Http
 
                 if (method == HttpMethod.Post)
                 {
-                    requestMessage.Content = new StringContent(JsonSerializer.Serialize(body));
+                    if (body is string serializedBody)
+                    {
+                        requestMessage.Content = new StringContent(serializedBody);
+                    }
+                    else
+                    {
+                        requestMessage.Content = new StringContent(JsonSerializer.Serialize(body));
+                    }
                     requestMessage.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 }
 
@@ -57,8 +64,6 @@ namespace NubankClient.Http
         }
 
         private (string Key, string Value) GetAuthorizationHeader(string authToken)
-        {
-            return ("Authorization", $"Bearer {authToken}");
-        }
+            => ("Authorization", $"Bearer {authToken}");
     }
 }
