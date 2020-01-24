@@ -19,6 +19,11 @@ namespace NubankClient
             foreach(var e  in events.ToList()) {
                 Console.WriteLine($"{e.Title} - {e.Amount} {e.CurrencyAmount}");
             }
+
+            var savings = await nubankClient.GetSavingsAsync();
+            foreach(var s  in savings.ToList()) {
+                Console.WriteLine($"{s.Title} - {s.Amount} {s.TypeName}");
+            }
         }
     }
 }

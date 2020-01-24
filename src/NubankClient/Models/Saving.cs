@@ -11,7 +11,7 @@ namespace NubankClient.Models
         public string TypeName { get; set; }
         public string Title { get; set; }
         public string Detail { get; set; }
-        public DateTimeOffset PostDate { get; set; }
+        public DateTime PostDate { get; set; }
         public float Amount { get; set; }
         public Account OriginAccount { get; set; }
         public Account DestinationAccount { get; set; }

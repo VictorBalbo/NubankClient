@@ -111,6 +111,11 @@ namespace NubankClient
             EnsureAuthenticated();
 
             var response = await _httpClient.PostWithAuthorizationAsync<GetSavingsResponse>(_endpoints.GraphQl, StatementGraphQl, _authToken);
+            
+            if (!string.IsNullOrEmpty(response.Error))
+            {
+                throw new Exception(response.Error);
+            }
 
             return response.Savings;
         }

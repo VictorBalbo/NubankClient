@@ -4,6 +4,6 @@ namespace NubankClient.Models.ApiResponses
 {
     public class GetEventsResponse : BaseResponse
     {
-        public List<Event> Events { get; set; }
+        public IEnumerable<Event> Events { get; set; }
     }
 }
